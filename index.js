@@ -94,6 +94,11 @@ async function run(){
 }
 run().catch(console.dir);
 
+
+app.get('/hello', (req, res)=>{
+    res.send('hello this is heroku')
+})
+
 app.get('/', (req , res)=>{
     res.send('this is mongodb site  genius server')
 })
@@ -101,3 +106,33 @@ app.get('/', (req , res)=>{
 app.listen(port, ()=>{
     console.log('runing port ', port)
 })
+
+
+
+/*
+*one time 
+
+1 .log in heroku 
+2. install heroku software 
+
+--------------
+*every project 
+1. git init 
+2. git ignore
+3. push every thing to git 
+4. make sure you have process.env.port in front of port number 
+5. make sure you have this script 'start': 'node index.js'  'start-dev': 'nodemon index.js'
+6. hreoku login 
+7.heroku create
+8. git  push heroku main
+
+------
+*update 
+
+1 .save everithing 
+2. git add ., git commit -m "something "
+3.git push heroku mail
+
+
+
+*/
